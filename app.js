@@ -16,10 +16,11 @@ const RulesEmbed = new Discord.MessageEmbed()
     //.setDescription("Click the emote to get Verified!")
     .setThumbnail('https://beatsofbetrayal.com/wp-content/uploads/2020/12/space_pad.png')
     .addFields(
-        { name: '1', value: '<a:muc_esp_a:780675735505207317> <a:muc_esp_a:780675735505207317> <a:muc_esp_a:780675735505207317>' },
-        { name: 'Vorstand', value: '<@303983116392071180> \n <@323792567596613633> \n <@366360582879838209>', inline: false },
-        { name: 'Admins', value: '<@185000373315043328>', inline: false },
-        { name: 'Inline field title', value: 'what', inline: true },
+        { name: '**[1.]** Höflichkeit und Respekt', value: 'Keine Beleidigungen, Elitismus, usw...' },
+        { name: '**[2.]** Keine Diskriminierung', value: 'Kein Rassismus, Sexismus, Diskriminierung aufgrund der Religion oder des politischen Ideals usw.'},
+        { name: '**[3.]** Keine Eigenwerbung/Werbung', value: '- Wenn Ihre Arbeit / Kreation der laufenden Konversation keinen Wert hinzufügt, wird sie gelöscht \n - Nur bei Rücksprache mit <@&784225300493631508> darf Werbung gepostet werden' },
+        { name: '\u200B', value: '\u200B' },
+        { name: '\u200B', value: '<@&784225300493631508> ist für den Discord verantwortlich und wird immer das letzte Wort haben. Viel Vergnügen auf dem Discord!'},
     )
     .setTimestamp()
     .setFooter('Team BoB Bot by Dancy', 'https://beatsofbetrayal.com/wp-content/uploads/2020/12/space_pad.png');
@@ -40,12 +41,12 @@ const Modcom = new Discord.MessageEmbed()
 // message.author.send(Embed);
 
 client.on('message', msg => {
-    if (!msg.content.startsWith(prefix) || msg.author.bot || !msg.member.roles.cache.find(role => role.name === "TeamBoB")) return;
+    if (!msg.content.startsWith(prefix) || msg.author.bot || !msg.member.roles.cache.find(role => role.name === "Team BoB")) return;
 
     const args = msg.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
     if (command === 'rules') {
-        client.channels.cache.get("789671496708128798").send(RulesEmbed);
+        client.channels.cache.get("789671330076295179").send(RulesEmbed);
     }
 });
 
